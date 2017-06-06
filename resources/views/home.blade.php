@@ -8,7 +8,7 @@
                 <div class="panel-heading">
                     Locations
 
-                    <a href="{{ route('location.create') }}" class="btn btn-xs btn-default pull-right" type="submit">
+                    <a href="{{ route('location.create') }}" class="btn btn-xs btn-primary pull-right" type="submit">
                     Add Location
                     </a>
                 </div>
@@ -19,7 +19,7 @@
                         <li  class="list-group-item">
                             {{ $location->zip }}
                         </li>
-                        
+
                     @empty
                         <li  class="list-group-item">
                             No locations found

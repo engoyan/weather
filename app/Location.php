@@ -20,4 +20,12 @@ class Location extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    /**
+     * Get the weather for the location.
+     */
+    public function weather()
+    {
+        return $this->hasMany('App\Weather', 'zip', 'zip');
+    }
 }
