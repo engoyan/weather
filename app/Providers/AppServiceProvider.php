@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Location;
+use App\Weather;
 use App\Observers\LocationObserver;
+use App\Observers\WeatherObserver;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -18,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         Location::observe(LocationObserver::class);
+        Weather::observe(WeatherObserver::class);
     }
 
     /**
