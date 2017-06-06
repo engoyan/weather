@@ -13,9 +13,19 @@
                     </a>
                 </div>
 
-                <div class="panel-body">
-                    You are logged in!
-                </div>
+                <ul class="list-group">
+                    @forelse ($locations as $location)
+
+                        <li  class="list-group-item">
+                            {{ $location->zip }}
+                        </li>
+                        
+                    @empty
+                        <li  class="list-group-item">
+                            No locations found
+                        </li>
+                    @endforelse
+                </ul>
             </div>
         </div>
     </div>

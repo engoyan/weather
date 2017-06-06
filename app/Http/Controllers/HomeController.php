@@ -17,12 +17,14 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show weather locations.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('home');
+        $locations = auth()->user()->locations()->get();
+
+        return view('home', compact('locations'));
     }
 }

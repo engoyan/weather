@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LocationRequest;
+use App\Location;
+
 
 class LocationController extends Controller
 {
@@ -24,5 +27,20 @@ class LocationController extends Controller
     public function create()
     {
         return view('location.create');
+    }
+
+    /**
+     * Store a newly created location in storage.
+     *
+     * @param  \Illuminate\Http\LocationRequest  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(LocationRequest $request)
+    {
+
+        $location = new Location(['zip' => $request->get('zip')]);
+        $request->user()->locations()->save($location);
+
+        return redirect('home');
     }
 }
