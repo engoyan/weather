@@ -15,11 +15,7 @@
 
                 <ul class="list-group">
                     @forelse ($locations as $location)
-
-                        <li  class="list-group-item">
-                            {{ $location->zip }}
-                        </li>
-
+                        @include('location.weather')
                     @empty
                         <li  class="list-group-item">
                             No locations found

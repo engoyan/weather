@@ -23,8 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $locations = auth()->user()->locations()->get();
-
+        $locations = auth()->user()->weather();
         return view('home', compact('locations'));
     }
 }

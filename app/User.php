@@ -35,4 +35,14 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Location');
     }
+
+    /**
+     * Get the current weather info for the user for all locations.
+     */
+    public function weather()
+    {
+        return $this->locations()
+                    ->with('currentWeather')
+                    ->get();
+    }
 }
